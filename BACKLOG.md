@@ -358,11 +358,11 @@ Para agregar mayor seguridad a la API, se requieren tokens JWT para autenticaci�
 ---
 
 ### Checklist de finalización
-- [ ] Agregar la dependencia `java-jwt` de Auth0 al `pom.xml`.
-- [ ] Crear la clase `TokenService` anotada con `@Service`.
-- [ ] Implementar `generarToken(Usuario usuario)` con HMAC256.
-- [ ] Configurar `jwt.secret` y `jwt.expiration` en `application.properties`.
-- [ ] Inyectar `TokenService` en `AuthenticationController` y retornar el token en la respuesta.
+- [x] Agregar la dependencia `java-jwt` de Auth0 al `pom.xml`.
+- [x] Crear la clase `TokenService` anotada con `@Service`.
+- [x] Implementar `generarToken(Usuario usuario)` con HMAC256.
+- [x] Configurar `jwt.secret` y `jwt.expiration` en `application.properties`.
+- [x] Inyectar `TokenService` en `AuthenticationController` y retornar el token en la respuesta.
 - [ ] Probar que el endpoint `POST /login` devuelva un token JWT válido.
 
 ---

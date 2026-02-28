@@ -1,6 +1,9 @@
 package com.aluralatam.forohub.controller;
 
 import com.aluralatam.forohub.domain.usuario.DatosAutenticacionUsuario;
+import com.aluralatam.forohub.infra.security.DatosJWTToken;
+import com.aluralatam.forohub.infra.security.TokenService;
+import com.aluralatam.forohub.domain.usuario.Usuario;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,14 +22,17 @@ public class AutenticacionController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    private TokenService tokenService;
+
     @PostMapping
     public ResponseEntity autenticarUsuario(@RequestBody @Valid DatosAutenticacionUsuario datosAutenticacionUsuario) {
         Authentication authToken = new UsernamePasswordAuthenticationToken(datosAutenticacionUsuario.login(),
                 datosAutenticacionUsuario.clave());
         var usuarioAutenticado = authenticationManager.authenticate(authToken);
 
-        // Por ahora retornamos solo HTTP 200 OK.
-        // En la HU 12 (próxima) retornaremos el JWT acá.
-        return ResponseEntity.ok().build();
+        var JWTtoken = tokenService.generarToken((Usuario) usuarioAutenticado.getPrincipal());
+
+        return ResponseEntity.ok(new DatosJWTToken(JWTtoken));
     }
 }
