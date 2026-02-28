@@ -384,12 +384,12 @@ El token JWT generado en la etapa anterior debe ser utilizado para proteger todo
 ---
 
 ### Checklist de finalización
-- [ ] Crear clase `SecurityFilter` extendiendo `OncePerRequestFilter`.
-- [ ] Implementar el método `getTokenFromHeader()` para extraer el JWT del header.
-- [ ] Implementar el método `getSubject(token)` en `TokenService` para validar y parsear el token.
-- [ ] Configurar `SecurityConfigurations` para registrar el filtro antes de `UsernamePasswordAuthenticationFilter`.
-- [ ] Proteger todos los endpoints excepto `POST /login`.
-- [ ] Manejar excepciones con respuestas HTTP apropiadas (401/403).
+- [x] Crear clase `SecurityFilter` extendiendo `OncePerRequestFilter`.
+- [x] Implementar el método `getTokenFromHeader()` para extraer el JWT del header.
+- [x] Implementar el método `getSubject(token)` en `TokenService` para validar y parsear el token.
+- [x] Configurar `SecurityConfigurations` para registrar el filtro antes de `UsernamePasswordAuthenticationFilter`.
+- [x] Proteger todos los endpoints excepto `POST /login`.
+- [x] Manejar excepciones con respuestas HTTP apropiadas (401/403).
 - [ ] Probar el flujo completo: login → obtener token → usar token en solicitudes protegidas.
 
 ---

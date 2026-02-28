@@ -35,4 +35,20 @@ public class TokenService {
         // Expira en 2 horas
         return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-05:00"));
     }
+
+    public String getSubject(String token) {
+        if (token == null) {
+            throw new RuntimeException("Token invalido");
+        }
+        try {
+            Algorithm algorithm = Algorithm.HMAC256(apiSecret); // Validando la firma
+            var verifier = JWT.require(algorithm)
+                    .withIssuer("forohub")
+                    .build()
+                    .verify(token);
+            return verifier.getSubject();
+        } catch (JWTCreationException exception) {
+            throw new RuntimeException("Token JWT no válido", exception);
+        }
+    }
 }
