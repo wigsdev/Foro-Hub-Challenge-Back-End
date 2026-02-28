@@ -189,10 +189,10 @@ Los datos (título, mensaje, fecha de creación, estado, autor y curso) deben se
 ---
 
 ### Checklist de finalización
-- [ ] Crear el método `@GetMapping` en `TopicoController` para `/topicos`.
-- [ ] Retornar la lista de tópicos como DTO con los 6 campos solicitados.
-- [ ] (Opcional) Implementar paginación con `@PageableDefault` ordenada por fecha.
-- [ ] (Opcional) Implementar filtros por curso y año.
+- [x] Crear el método `@GetMapping` en `TopicoController` para `/topicos`.
+- [x] Retornar la lista de tópicos como DTO con los 6 campos solicitados.
+- [x] (Opcional) Implementar paginación con `@PageableDefault` ordenada por fecha.
+- [x] (Opcional) Implementar filtros por curso y año.
 - [ ] Probar el endpoint con Insomnia o Postman.
 
 ---
@@ -213,10 +213,10 @@ Los datos del tópico (título, mensaje, fecha de creación, estado, autor y cur
 ---
 
 ### Checklist de finalización
-- [ ] Crear método `@GetMapping("/{id}")` en `TopicoController`.
-- [ ] Usar `@PathVariable` para recibir el ID.
-- [ ] Retornar los datos del tópico como DTO si el ID existe.
-- [ ] Manejar el caso en que el ID no exista (respuesta adecuada al cliente).
+- [x] Crear método `@GetMapping("/{id}")` en `TopicoController`.
+- [x] Usar `@PathVariable` para recibir el ID.
+- [x] Retornar los datos del tópico como DTO si el ID existe.
+- [x] Manejar el caso en que el ID no exista (respuesta adecuada al cliente).
 - [ ] Probar el endpoint con Insomnia o Postman.
 
 ---
