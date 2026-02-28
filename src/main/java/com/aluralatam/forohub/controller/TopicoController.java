@@ -1,9 +1,7 @@
 package com.aluralatam.forohub.controller;
 
-import com.aluralatam.forohub.domain.topico.DatosRegistroTopico;
-import com.aluralatam.forohub.domain.topico.DatosRespuestaTopico;
-import com.aluralatam.forohub.domain.topico.Topico;
-import com.aluralatam.forohub.domain.topico.TopicoRepository;
+import com.aluralatam.forohub.domain.topico.*;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -55,6 +53,34 @@ public class TopicoController {
             return ResponseEntity.ok(new DatosRespuestaTopico(topicoEncontrado.get()));
         } else {
             return ResponseEntity.notFound().build(); // HTTP 404
+        }
+    }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity<DatosRespuestaTopico> actualizarTopico(@RequestBody @Valid DatosActualizarTopico datos) {
+        Optional<Topico> topicoEncontrado = topicoRepository.findById(datos.id());
+
+        if (topicoEncontrado.isPresent()) {
+            Topico topico = topicoEncontrado.get();
+            topico.actualizarDatos(datos);
+            return ResponseEntity.ok(new DatosRespuestaTopico(topico));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity eliminarTopico(@PathVariable Long id) {
+        Optional<Topico> topicoEncontrado = topicoRepository.findById(id);
+
+        if (topicoEncontrado.isPresent()) {
+            Topico topico = topicoEncontrado.get();
+            topico.cerrarTopico(); // Borrado lógico
+            return ResponseEntity.noContent().build(); // HTTP 204
+        } else {
+            return ResponseEntity.notFound().build();
         }
     }
 }

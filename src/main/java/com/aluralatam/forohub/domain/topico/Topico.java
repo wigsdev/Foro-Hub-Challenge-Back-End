@@ -35,4 +35,23 @@ public class Topico {
         this.autor = datos.autor();
         this.curso = datos.curso();
     }
+
+    public void actualizarDatos(DatosActualizarTopico datos) {
+        if (datos.titulo() != null) {
+            this.titulo = datos.titulo();
+        }
+        if (datos.mensaje() != null) {
+            this.mensaje = datos.mensaje();
+        }
+        if (datos.autor() != null) {
+            this.autor = datos.autor();
+        }
+        if (datos.curso() != null) {
+            this.curso = datos.curso();
+        }
+    }
+
+    public void cerrarTopico() {
+        this.status = "CERRADO";
+    }
 }
