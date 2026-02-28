@@ -103,9 +103,9 @@ Para crear un tópico se necesitan las siguientes informaciones:
 ---
 
 ### Checklist de finalización
-- [ ] Diseñar el modelo de datos para la tabla `topicos` con los 7 campos requeridos.
-- [ ] Crear el diagrama ER de la base de datos (herramienta a elección).
-- [ ] Crear el script SQL o migración Flyway correspondiente.
+- [x] Diseñar el modelo de datos para la tabla `topicos` con los 7 campos requeridos.
+- [x] Crear el diagrama ER de la base de datos (herramienta a elección).
+- [x] Crear el script SQL o migración Flyway correspondiente.
 
 ---
 
@@ -138,10 +138,10 @@ Las migraciones son archivos `.sql` con instrucciones DDL para construir las tab
 ---
 
 ### Checklist de finalización
-- [ ] Crear la base de datos en MySQL.
-- [ ] Configurar `application.properties` con las credenciales y driver.
-- [ ] Crear el primer archivo de migración Flyway (`V1__create-table-topicos.sql`).
-- [ ] Verificar que Flyway ejecuta la migración correctamente al iniciar el proyecto.
+- [x] Crear la base de datos en MySQL.
+- [x] Configurar `application.properties` con las credenciales y driver.
+- [x] Crear el primer archivo de migración Flyway (`V1__create-table-topicos.sql`).
+- [x] Verificar que Flyway ejecuta la migración correctamente al iniciar el proyecto.
 
 ---
 
