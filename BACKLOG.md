@@ -163,11 +163,11 @@ Los datos del tópico (título, mensaje, autor y curso) deben ser enviados en el
 ---
 
 ### Checklist de finalización
-- [ ] Crear la entidad `Topico` con los campos requeridos y anotaciones JPA.
-- [ ] Crear el repositorio `TopicoRepository` extendiendo `JpaRepository`.
-- [ ] Crear el controlador `TopicoController` con el método `@PostMapping`.
-- [ ] Implementar validación de campos obligatorios con `@Valid` y `@NotBlank`.
-- [ ] Implementar la regla de unicidad (no duplicados por título y mensaje).
+- [x] Crear la entidad `Topico` con los campos requeridos y anotaciones JPA.
+- [x] Crear el repositorio `TopicoRepository` extendiendo `JpaRepository`.
+- [x] Crear el controlador `TopicoController` con el método `@PostMapping`.
+- [x] Implementar validación de campos obligatorios con `@Valid` y `@NotBlank`.
+- [x] Implementar la regla de unicidad (no duplicados por título y mensaje).
 - [ ] Probar el endpoint con Insomnia o Postman.
 
 ---
