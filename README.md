@@ -81,4 +81,17 @@ Al finalizar el desarrollo, tendremos una API REST con las siguientes caracterí
 | `PUT` | `/topicos/{id}` | Actualizar un tópico |
 | `DELETE` | `/topicos/{id}` | Eliminar un tópico |
 
-> ⚠️ Para acceder a los endpoints (excepto `/login`), incluir el token JWT en el header: `Authorization: Bearer <token>`
+> ⚠️ Para acceder a los endpoints (excepto `/login`), es necesario incluir el token JWT en el header: `Authorization: Bearer <token>`
+
+### Pruebas de Seguridad (JWT en Acción)
+
+**1. Petición rechazada sin Token (403 Forbidden):**
+![GET /topicos Denied](https://raw.githubusercontent.com/wigsdev/Foro-Hub-Challenge-Back-End/main/img/403_forbidden.png)
+
+**2. Petición aceptada con Bearer Token (200 OK):**
+![GET /topicos Allowed](https://raw.githubusercontent.com/wigsdev/Foro-Hub-Challenge-Back-End/main/img/200_ok.png)
+
+---
+
+## 🏆 Entrega Final (Alura Challenges)
+Proyecto desarrollado para el **Challenge ForoHub** de la formación *Java y Spring Framework* impartida por Alura Latam y Oracle Next Education (ONE). Todas las Historias de Usuario principales (HU 01 a HU 15) fueron implementadas exitosamente con control de versiones y persistencia de base de datos relacional.

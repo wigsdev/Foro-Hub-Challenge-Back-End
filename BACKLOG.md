@@ -299,7 +299,7 @@ Ahora que has desarrollado todas las funcionalidades del ForoHub, es el momento 
 ### Checklist de finalización
 - [x] Asegurarse que todos los *commits* están subidos al repositorio remoto (`git push`).
 - [x] Comprobar que el repositorio sea público.
-- [ ] Actualizar el `README.md` con las funcionalidades finales implementadas. *(Pendiente para HU 14)*
+- [x] Actualizar el `README.md` con las funcionalidades finales implementadas. *(Completado en HU 14)*
 
 ---
 
@@ -390,7 +390,7 @@ El token JWT generado en la etapa anterior debe ser utilizado para proteger todo
 - [x] Configurar `SecurityConfigurations` para registrar el filtro antes de `UsernamePasswordAuthenticationFilter`.
 - [x] Proteger todos los endpoints excepto `POST /login`.
 - [x] Manejar excepciones con respuestas HTTP apropiadas (401/403).
-- [ ] Probar el flujo completo: login → obtener token → usar token en solicitudes protegidas.
+- [x] Probar el flujo completo: login → obtener token → usar token en solicitudes protegidas.
 
 ---
 
@@ -406,10 +406,10 @@ El `README.md` es un documento con la descripción del proyecto y sus instruccio
 ---
 
 ### Checklist de finalización
-- [ ] Redactar descripción del proyecto y sus funcionalidades.
-- [ ] Documentar los endpoints de la API (método, URL, descripción).
-- [ ] Incluir instrucciones para configurar y ejecutar el proyecto localmente.
-- [ ] (Opcional) Añadir capturas de pantalla o GIFs del proyecto en funcionamiento.
+- [x] Redactar descripción del proyecto y sus funcionalidades.
+- [x] Documentar los endpoints de la API (método, URL, descripción).
+- [x] Incluir instrucciones para configurar y ejecutar el proyecto localmente.
+- [x] (Opcional) Añadir capturas de pantalla o GIFs del proyecto en funcionamiento.
 
 ---
 
@@ -426,11 +426,11 @@ https://app.aluracursos.com/course/spring-framework-challenge-foro-hub/task/8707
 ---
 
 ### Checklist de finalización
-- [ ] Asegurarse que todos los *commits* están subidos al repositorio remoto (`git push`).
-- [ ] Comprobar que el repositorio sea público.
-- [ ] Ingresar al enlace de entrega.
-- [ ] Pegar el link del repositorio GitHub.
-- [ ] ¡Descargar tu certificado de conclusión! 🎉
+- [x] Asegurarse que todos los *commits* están subidos al repositorio remoto (`git push`).
+- [x] Comprobar que el repositorio sea público.
+- [x] Ingresar al enlace de entrega.
+- [x] Pegar el link del repositorio GitHub.
+- [x] ¡Descargar tu certificado de conclusión! 🎉
 
 ---
 
