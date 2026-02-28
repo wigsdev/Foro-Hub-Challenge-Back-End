@@ -277,13 +277,13 @@ Las pruebas de las funcionalidades de la API pueden realizarse utilizando alguna
 ---
 
 ### Checklist de finalización
-- [ ] Instalar y configurar Postman o Insomnia.
-- [ ] Probar el endpoint `POST /topicos` (creación).
-- [ ] Probar el endpoint `GET /topicos` (listado).
-- [ ] Probar el endpoint `GET /topicos/{id}` (detalle).
-- [ ] Probar el endpoint `PUT /topicos/{id}` (actualización).
-- [ ] Probar el endpoint `DELETE /topicos/{id}` (eliminación).
-- [ ] Verificar respuestas de error ante datos inválidos o IDs inexistentes.
+- [x] Instalar y configurar Postman o Insomnia.
+- [x] Probar el endpoint `POST /topicos` (creación).
+- [x] Probar el endpoint `GET /topicos` (listado).
+- [x] Probar el endpoint `GET /topicos/{id}` (detalle).
+- [x] Probar el endpoint `PUT /topicos/{id}` (actualización).
+- [x] Probar el endpoint `DELETE /topicos/{id}` (eliminación).
+- [x] Verificar respuestas de error ante datos inválidos o IDs inexistentes.
 
 ---
 
@@ -297,9 +297,9 @@ Ahora que has desarrollado todas las funcionalidades del ForoHub, es el momento 
 ---
 
 ### Checklist de finalización
-- [ ] Asegurarse que todos los *commits* están subidos al repositorio remoto (`git push`).
-- [ ] Comprobar que el repositorio sea público.
-- [ ] Actualizar el `README.md` con las funcionalidades finales implementadas.
+- [x] Asegurarse que todos los *commits* están subidos al repositorio remoto (`git push`).
+- [x] Comprobar que el repositorio sea público.
+- [ ] Actualizar el `README.md` con las funcionalidades finales implementadas. *(Pendiente para HU 14)*
 
 ---
 
@@ -327,13 +327,13 @@ Crear una nueva tabla de usuarios para almacenar credenciales (login y contrase�
 ---
 
 ### Checklist de finalización
-- [ ] Agregar/verificar la dependencia `Spring Security` en `pom.xml`.
-- [ ] Crear clase `SecurityConfigurations` con `@EnableWebSecurity`.
-- [ ] Crear entidad `Usuario` que implemente `UserDetails`.
-- [ ] Crear `UsuarioRepository` con método de búsqueda por login.
-- [ ] Crear migración Flyway para la tabla `usuarios`.
-- [ ] Crear `AuthenticationController` con endpoint `POST /login`.
-- [ ] Validar autenticación vía `AuthenticationManager`.
+- [x] Agregar/verificar la dependencia `Spring Security` en `pom.xml`.
+- [x] Crear clase `SecurityConfigurations` con `@EnableWebSecurity`.
+- [x] Crear entidad `Usuario` que implemente `UserDetails`.
+- [x] Crear `UsuarioRepository` con método de búsqueda por login.
+- [x] Crear migración Flyway para la tabla `usuarios`.
+- [x] Crear `AuthenticationController` con endpoint `POST /login`.
+- [x] Validar autenticación vía `AuthenticationManager`.
 - [ ] Probar el flujo de login con Insomnia o Postman.
 
 ---
