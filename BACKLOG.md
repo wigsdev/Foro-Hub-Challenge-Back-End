@@ -28,9 +28,9 @@ Utilicemos nuestro README para detallar las funcionalidades de nuestro sistema, 
 ---
 
 ### Checklist de finalización
-- [ ] Crear el repositorio en GitHub (público).
-- [ ] Hacer el primer commit con la estructura inicial del proyecto.
-- [ ] Redactar el `README.md` con las funcionalidades del sistema.
+- [x] Crear el repositorio en GitHub (público).
+- [x] Hacer el primer commit con la estructura inicial del proyecto.
+- [x] Redactar el `README.md` con las funcionalidades del sistema.
 
 ---
 
@@ -67,12 +67,12 @@ Asegúrate de tener los siguientes programas, archivos y versiones:
 ---
 
 ### Checklist de finalización
-- [ ] Validar variables de entorno de Java JDK (v17+).
-- [ ] Validar variables de entorno de Maven (v4+).
-- [ ] Instalar y configurar MySQL (v8+).
-- [ ] Generar el proyecto base desde Spring Initializr con todas las dependencias indicadas.
-- [ ] Importar el proyecto al IDE.
-- [ ] Verificar que el proyecto compila y levanta correctamente.
+- [x] Validar variables de entorno de Java JDK (v17+).
+- [x] Validar variables de entorno de Maven (v4+).
+- [x] Instalar y configurar MySQL (v8+).
+- [x] Generar el proyecto base desde Spring Initializr con todas las dependencias indicadas.
+- [x] Importar el proyecto al IDE.
+- [x] Verificar que el proyecto compila y levanta correctamente.
 
 ---
 
