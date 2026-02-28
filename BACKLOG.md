@@ -255,10 +255,10 @@ Usar `@PathVariable` para recibir el ID. Verificar que el tópico exista antes d
 ---
 
 ### Checklist de finalización
-- [ ] Crear método `@DeleteMapping("/{id}")` en `TopicoController`.
-- [ ] Verificar existencia del tópico con `Optional.isPresent()`.
-- [ ] Ejecutar `deleteById` si el ID existe.
-- [ ] Retornar respuesta `204 No Content` al cliente.
+- [x] Crear método `@DeleteMapping("/{id}")` en `TopicoController`.
+- [x] Verificar existencia del tópico con `Optional.isPresent()`.
+- [x] Ejecutar `deleteById` si el ID existe.
+- [x] Retornar respuesta `204 No Content` al cliente.
 - [ ] Probar el endpoint con Insomnia o Postman.
 
 ---
