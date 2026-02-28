@@ -447,9 +447,9 @@ Para que el foro esté completo, se pueden implementar endpoints adicionales que
 ---
 
 ### Checklist de finalización
-- [ ] (Opcional) Implementar CRUD completo para `/usuarios`.
-- [ ] (Opcional) Implementar CRUD completo para `/respuestas`.
-- [ ] (Opcional) Proteger los nuevos endpoints con autenticación JWT.
+- [x] (Opcional) Implementar CRUD completo para `/usuarios`.
+- [x] (Opcional) Implementar CRUD completo para `/respuestas`.
+- [x] (Opcional) Proteger los nuevos endpoints con autenticación JWT.
 
 ---
 
@@ -465,6 +465,6 @@ Además de incorporar la dependencia correspondiente en el `pom.xml`, tambien se
 ---
 
 ### Checklist de finalización
-- [ ] Agregar la dependencia `springdoc-openapi-starter-webmvc-ui` al `pom.xml`.
-- [ ] Permitir el acceso público a `/swagger-ui.html` y `/v3/api-docs` en la configuración de seguridad.
-- [ ] Verificar que la documentación se genera correctamente al iniciar el proyecto.
+- [x] Agregar la dependencia `springdoc-openapi-starter-webmvc-ui` al `pom.xml`.
+- [x] Permitir el acceso público a `/swagger-ui.html` y `/v3/api-docs` en la configuración de seguridad.
+- [x] Verificar que la documentación se genera correctamente al iniciar el proyecto.
