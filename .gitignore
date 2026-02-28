@@ -4,6 +4,10 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### Credenciales locales (nunca commitear) ###
+application-local.properties
+
+
 ### STS ###
 .apt_generated
 .classpath
