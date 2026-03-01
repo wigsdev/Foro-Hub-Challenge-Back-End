@@ -129,7 +129,7 @@ A través de esta documentación viva, es factible conocer el Payload JSON exact
 
 ## 📜 Licencia
 
-Este proyecto está bajo la Licencia **MIT**. Puedes utilizar, clonar y modificar este código libremente para tus propios desarrollos, portafolios o fines académicos.
+Este proyecto está bajo la Licencia **MIT** - mira el archivo [LICENSE](LICENSE) para más detalles. Puedes utilizar, clonar y modificar este código libremente para tus propios desarrollos, portafolios o fines académicos.
 
 ## 👨‍💻 Autor
 
