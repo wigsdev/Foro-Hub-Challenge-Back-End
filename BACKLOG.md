@@ -536,10 +536,10 @@ Migrar la persistencia de nuestra máquina local a un servidor gestionado 24/7 d
 ### Descripción
 Subir la API Java 17 + Spring Boot a Render. Configurar las variables de entorno para que el JAR compilado se conecte a la BD en Aiven en lugar de localhost.
 ### Checklist
-- [ ] Conectar repo GitHub a Render (Web Service).
-- [ ] Definir Root Directory y Build Command (`mvn clean package -DskipTests`).
-- [ ] Inyectar variables de entorno (BD URL, usuario, clave, y JWT_SECRET).
-- [ ] Validar encendido exitoso y correr test contra la URL pública (ej. `midominio.onrender.com/swagger-ui.html`).
+- [x] Conectar repo GitHub a Render (Web Service).
+- [x] Definir Root Directory y Build Command (`mvn clean package -DskipTests`).
+- [x] Inyectar variables de entorno (BD URL, usuario, clave, y JWT_SECRET).
+- [x] Validar encendido exitoso y correr test contra la URL pública (ej. `midominio.onrender.com/swagger-ui.html`).
 
 ## HU 25: Despliegue del Frontend (Vercel)
 **Etiquetas:** `Frontend`, `Cloud`
