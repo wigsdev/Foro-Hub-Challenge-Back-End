@@ -468,3 +468,92 @@ Además de incorporar la dependencia correspondiente en el `pom.xml`, tambien se
 - [x] Agregar la dependencia `springdoc-openapi-starter-webmvc-ui` al `pom.xml`.
 - [x] Permitir el acceso público a `/swagger-ui.html` y `/v3/api-docs` en la configuración de seguridad.
 - [x] Verificar que la documentación se genera correctamente al iniciar el proyecto.
+
+---
+
+# Fase 2: Aplicación Frontend (React + Vite)
+
+## HU 18: Setup del Proyecto Frontend
+**Etiquetas:** `Frontend`, `React`, `Vite`
+### Descripción
+Inicializar un proyecto React con Vite (JavaScript o TypeScript). Configurar la estructura de directorios (`/components`, `/pages`, `/services`, `/hooks`, `/context`) y configurar las herramientas de estilización como Tailwind CSS o CSS Modules para un diseño premium.
+### Checklist
+- [x] Crear el proyecto `npm create vite@latest frontend -- --template react`
+- [x] Limpiar archivos boiler-plate e inicializar `index.css`.
+- [x] Crear variables CSS para el esquema de colores (Dark Mode, acentos).
+
+## HU 19: Sistema de Autenticación y Ruteo Protegido
+**Etiquetas:** `Frontend`, `Seguridad`, `React Router`
+### Descripción
+Implementar React Router DOM para manejar la navegación. Crear un contexto global (`AuthContext`) que maneje el estado del usuario logueado almacenando el JWT en `localStorage`. Las páginas internas deben estar protegidas y redirigir al `/login` si no hay token.
+### Checklist
+- [x] Instalar `react-router-dom`.
+- [x] Crear `AuthContext` y `AuthProvider`.
+- [x] Crear componente `<ProtectedRoute>` para envolver vistas privadas.
+- [x] Implementar la vista y formulario de `/login`.
+
+## HU 20: Consumo de la API REST (CRUD)
+**Etiquetas:** `Frontend`, `API Fetch`
+### Descripción
+Integrar la conexión real con el backend de Spring Boot. Se requerirá un interceptor o servicio (usando `fetch` o `axios`) que adjunte automáticamente el header `Authorization: Bearer <token>` a cada solicitud.
+### Checklist
+- [x] Crear `api.js` base configurado con la URL base del backend.
+- [x] Implementar vista de Tablero Principal (`GET /topicos`).
+- [x] Implementar vista de Creación de Tópico (`POST /topicos`).
+- [x] Implementar vista Detalle de Tópico con listado de Respuestas (`GET /topicos/{id}` y `GET /respuestas/topico/{id}`).
+
+## HU 21: UI/UX y Micro-animaciones
+**Etiquetas:** `Frontend`, `Estilos`, `Diseño Premium`
+### Descripción
+Asegurar que la aplicación luzca profesional, implementando estados de carga (spinners/skeletons), notificaciones "toast" para éxito/error, transiciones fluidas y diseño adaptable (responsive) a dispositivos móviles.
+### Checklist
+- [x] Añadir feedback visual en los submits de formularios (loading state).
+- [x] Manejar respuestas HTTP fallidas emitiendo alertas para el usuario.
+- [x] Ajustar UI para móviles y tablets.
+
+---
+
+# Fase 3: Despliegue en Producción (Cloud Deployment)
+
+## HU 22: Configuración de Entornos (CORS & Env Vars)
+**Etiquetas:** `Backend`, `Deploy`, `Configuración`
+### Descripción
+El backend Spring Boot y el frontend React correrán en distintos dominios en la nube. Se debe configurar políticas de CORS explícitas en `SecurityConfigurations.java` del backend, y utilizar un archivo `.env` en el frontend para referenciar dinámicamente la URL de la API en producción.
+### Checklist
+- [x] Agregar configuración CORS global en Sprint Boot.
+- [x] Reemplazar literales de localhost en React por `import.meta.env.VITE_API_URL`.
+
+## HU 23: Despliegue de la Base de Datos en Aiven
+**Etiquetas:** `Base de Datos`, `Cloud`
+### Descripción
+Migrar la persistencia de nuestra máquina local a un servidor gestionado 24/7 de MySQL/PostgreSQL usando Aiven o Neon.tech.
+### Checklist
+- [ ] Crear instancia de Base de Datos en Aiven.
+- [ ] Obtener URI de conexión y probarla localmente (DBeaver o en el `application.properties`).
+
+## HU 24: Despliegue de la API Backend (Render)
+**Etiquetas:** `Backend`, `Cloud`, `DevOps`
+### Descripción
+Subir la API Java 17 + Spring Boot a Render. Configurar las variables de entorno para que el JAR compilado se conecte a la BD en Aiven en lugar de localhost.
+### Checklist
+- [ ] Conectar repo GitHub a Render (Web Service).
+- [ ] Definir Root Directory y Build Command (`mvn clean package -DskipTests`).
+- [ ] Inyectar variables de entorno (BD URL, usuario, clave, y JWT_SECRET).
+- [ ] Validar encendido exitoso y correr test contra la URL pública (ej. `midominio.onrender.com/swagger-ui.html`).
+
+## HU 25: Despliegue del Frontend (Vercel)
+**Etiquetas:** `Frontend`, `Cloud`
+### Descripción
+Conectar la carpeta del frontend al servicio de alojamiento de Vercel. Despliegue continuo ante cada nuevo commit principal.
+### Checklist
+- [ ] Importar frontend desde GitHub a Vercel.
+- [ ] Configurar variable de entorno `VITE_API_URL` apuntando a la URL pública de Render.
+- [ ] Desplegar y asegurar ruteo correcto configurando `vercel.json` para SPAs (re-escribir urls al `index.html`).
+
+## HU 26: Smoke Test E2E de Producción
+**Etiquetas:** `QA`, `Pruebas`
+### Descripción
+Validar punto a punto en los URLs reales públicos que un usuario puede loguearse, crear un tópico de prueba y las credenciales validen criptográficamente al guardarse en la BD Aiven.
+### Checklist
+- [ ] Hacer flujo Login -> Crear Tópico en Vercel.
+- [ ] Confirmar la existencia del registro en Base de Datos.
