@@ -24,8 +24,8 @@ const NewTopic = () => {
                 body: JSON.stringify({
                     titulo,
                     mensaje,
-                    autor_id: 1, // Nota: el Backend validará esto con el Token
-                    nombreCurso
+                    autor: 'admin@aluracursos.com', // El Backend espera @NotBlank String autor
+                    curso: nombreCurso              // El Backend espera @NotBlank String curso
                 })
             });
 
