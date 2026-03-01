@@ -1,97 +1,65 @@
-# ForoHub - Challenge Back End
+<h1 align="center">ForoHub PWA - Desafío Alura LATAM</h1>
 
-## Historia
-
-¡Bienvenido a **ForoHub**, el challenge de Back End de Alura!
-
-Un foro es un lugar donde todos los participantes de una plataforma pueden colocar sus preguntas sobre determinados asuntos. En Alura, los estudiantes utilizan el foro para resolver sus dudas sobre los cursos y proyectos en los que están participando. Este lugar está lleno de aprendizaje y colaboración entre estudiantes, profesores y moderadores.
-
-Ya sabemos para qué sirve el foro y cómo se ve, pero ¿sabemos cómo funciona por detrás? ¿Dónde se almacenan las informaciones? ¿Cómo se tratan esos datos para relacionar un tópico con una respuesta, o los usuarios con las respuestas de un tópico?
-
-Ese es nuestro desafío: replicar a nivel de back end este proceso, y para eso crearemos una **API REST usando Spring**.
-
----
-
-## Funcionalidades
-
-Nuestra API se centra específicamente en los **tópicos**, y permite a los usuarios:
-
-- ✅ Crear un nuevo tópico
-- ✅ Mostrar todos los tópicos creados
-- ✅ Mostrar un tópico específico
-- ✅ Actualizar un tópico
-- ✅ Eliminar un tópico
-
-Es lo que conocemos como **CRUD** (Create, Read, Update, Delete).
-
-Al finalizar el desarrollo, tendremos una API REST con las siguientes características:
-
-- 🔗 **Rutas REST** implementadas siguiendo las mejores prácticas del modelo REST.
-- ✔️ **Validaciones** realizadas según reglas de negocio.
-- 🗄️ **Base de datos** para la persistencia de la información.
-- 🔐 **Autenticación/Autorización** para restringir el acceso a la información.
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-25.0.2-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
+  <img src="https://img.shields.io/badge/Spring_Boot-4.0.3-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot"/>
+  <img src="https://img.shields.io/badge/React-18.0-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+  <img src="https://img.shields.io/badge/Aiven_MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="Aiven"/>
+  <img src="https://img.shields.io/badge/Render-Docker-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Render"/>
+  <img src="https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"/>
+</p>
 
 ---
 
-## Tecnologías
+## 🚀 Sobre el Proyecto
 
-- Java 17+
-- Spring Boot 3
-- Spring Security + JWT
-- Spring Data JPA
-- Flyway Migration
-- MySQL 8+
-- Lombok
-- Bean Validation
+ForoHub es una Progressive Web Application (PWA) construida como proyecto final para el *Challenge Back-End* de Alura LATAM y Oracle Next Education. Consiste en una arquitectura **Cliente-Servidor (Stateless)** moderna que emula el funcionamiento de StackOverflow o un foro de aprendizaje interactivo.
 
----
+La plataforma está diseñada con una estricta separación de responsabilidades:
+- **Backend (API REST):** Desarrollado en Java 25 y Spring Boot 4, ofrece seguridad robusta mediante Spring Security y **JSON Web Tokens (JWT)**.
+- **Frontend (SPA):** Desarrollado con React y Vite, prestando una UI con tema oscuro, glassmorphism y ruteo protegido.
 
-## Cómo ejecutar el proyecto
+<br>
 
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/forohub.git
-   ```
+<div align="center">
+    <h3>Pantalla de Autenticación</h3>
+    <img src="./assets/login_page.png" width="600" alt="ForoHub Login Page">
+</div>
 
-2. Configurar las variables en `src/main/resources/application.properties`:
-   ```properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/forohub
-   spring.datasource.username=TU_USUARIO
-   spring.datasource.password=TU_CONTRASEÑA
-   api.security.secret=TU_SECRET_JWT
-   ```
+<br>
 
-3. Ejecutar el proyecto desde el IDE o con Maven:
-   ```bash
-   ./mvnw spring-boot:run
-   ```
+## ⚙️ Arquitectura Multi-Cloud
 
-4. La API estará disponible en `http://localhost:8080`.
+Este proyecto está 100% alojado en la nube con un pipeline CI/CD activo.
 
----
+*   **Persistencia:** La Base de Datos Relacional (MySQL) se encuentra orquestada en la nube por **Aiven**, recibiendo migraciones automáticas mediante *Flyway*.
+*   **Contenedor API:** El Backend de Spring Boot fue dockerizado (multi-stage file) y se ejecuta continuamente como un *Web Service* en **Render**.
+*   **Cliente CDN:** El Frontend en React está desplegado y servido globalmente con baja latencia mediante la red perimetral de **Vercel**.
 
-## Endpoints principales
+<br>
 
-| Método | URI | Descripción |
-|--------|-----|-------------|
-| `POST` | `/login` | Autenticación (retorna token JWT) |
-| `POST` | `/topicos` | Crear un nuevo tópico |
-| `GET` | `/topicos` | Listar todos los tópicos |
-| `GET` | `/topicos/{id}` | Obtener detalle de un tópico |
-| `PUT` | `/topicos/{id}` | Actualizar un tópico |
-| `DELETE` | `/topicos/{id}` | Eliminar un tópico |
+<div align="center">
+    <h3>Dashboard Privado (Rutas Protegidas E2E)</h3>
+    <img src="./assets/dashboard_empty.png" width="600" alt="ForoHub Dashboard">
+</div>
 
-> ⚠️ Para acceder a los endpoints (excepto `/login`), es necesario incluir el token JWT en el header: `Authorization: Bearer <token>`
+<br>
 
-### Pruebas de Seguridad (JWT en Acción)
+## 🛠️ Tecnologías y Dependencias Principales
 
-**1. Petición rechazada sin Token (403 Forbidden):**
-![GET /topicos Denied](https://raw.githubusercontent.com/wigsdev/Foro-Hub-Challenge-Back-End/main/img/403_forbidden.png)
+**Backend (`/`):**
+- Spring Web, Spring Data JPA, Spring Security.
+- MySQL Connector J / Flyway Migration.
+- JWT (Auth0 jsr310).
+- Lombok y Spring Boot DevTools.
+- Springdoc (Swagger UI OpenAPI).
 
-**2. Petición aceptada con Bearer Token (200 OK):**
-![GET /topicos Allowed](https://raw.githubusercontent.com/wigsdev/Foro-Hub-Challenge-Back-End/main/img/200_ok.png)
+**Frontend (`/forohub-frontend/`):**
+- React Vite.
+- React Router DOM (v6+).
+- Lucide React (Icons).
+- Vanilla CSS Variables.
 
 ---
 
-## 🏆 Entrega Final (Alura Challenges)
-Proyecto desarrollado para el **Challenge ForoHub** de la formación *Java y Spring Framework* impartida por Alura Latam y Oracle Next Education (ONE). Todas las Historias de Usuario principales (HU 01 a HU 15) fueron implementadas exitosamente con control de versiones y persistencia de base de datos relacional.
+> Desafío de programación completado y documentado exhaustivamente bajo control de versiones Git en Marzo de 2026. Alura Latam ONE.
