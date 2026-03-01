@@ -13,17 +13,17 @@
 
 ## 🚀 Sobre el Proyecto
 
-ForoHub es una Progressive Web Application (PWA) construida como proyecto final para el *Challenge Back-End* de Alura LATAM y Oracle Next Education. Consiste en una arquitectura **Cliente-Servidor (Stateless)** moderna que emula el funcionamiento de StackOverflow o un foro de aprendizaje interactivo.
+ForoHub es una Progressive Web Application (PWA) construida como proyecto integral y final para el *Challenge Back-End* de Alura LATAM y Oracle Next Education. Consiste en una arquitectura **Cliente-Servidor (Stateless)** moderna que emula el funcionamiento de StackOverflow o un foro de aprendizaje colaborativo.
 
 La plataforma está diseñada con una estricta separación de responsabilidades:
-- **Backend (API REST):** Desarrollado en Java 25 y Spring Boot 4, ofrece seguridad robusta mediante Spring Security y **JSON Web Tokens (JWT)**.
-- **Frontend (SPA):** Desarrollado con React y Vite, prestando una UI con tema oscuro, glassmorphism y ruteo protegido.
+- **Backend (API REST):** Desarrollado en Java 25 y Spring Boot 4, ofrece seguridad robusta mediante cifrado Bcrypt, Spring Security y **JSON Web Tokens (JWT)**.
+- **Frontend (SPA):** Desarrollado con React y Vite, presentando una Interfaz de Usuario (UI) con tema oscuro nativo, glassmorphism, interceptores Fetch E2E y ruteo protegido.
 
 <br>
 
 <div align="center">
     <h3>Pantalla de Autenticación</h3>
-    <img src="./assets/login_page.png" width="600" alt="ForoHub Login Page">
+    <img src="./assets/login_page.png" width="800" alt="ForoHub Login Page">
 </div>
 
 <br>
@@ -32,34 +32,66 @@ La plataforma está diseñada con una estricta separación de responsabilidades:
 
 Este proyecto está 100% alojado en la nube con un pipeline CI/CD activo.
 
-*   **Persistencia:** La Base de Datos Relacional (MySQL) se encuentra orquestada en la nube por **Aiven**, recibiendo migraciones automáticas mediante *Flyway*.
-*   **Contenedor API:** El Backend de Spring Boot fue dockerizado (multi-stage file) y se ejecuta continuamente como un *Web Service* en **Render**.
-*   **Cliente CDN:** El Frontend en React está desplegado y servido globalmente con baja latencia mediante la red perimetral de **Vercel**.
+*   **Persistencia (Aiven):** La Base de Datos Relacional MySQL 8 se encuentra orquestada en la nube, recibiendo inyecciones y migraciones de esquemas controladas automáticamente mediante *Flyway*.
+*   **Contenedor API (Render):** El Backend de Spring Boot fue dockerizado (multi-stage file) y se ejecuta en un *Web Service* Linux. Interviene en todo el ruteo CORS y valida las peticiones.
+*   **Cliente SPA (Vercel):** El Frontend en React está desplegado y servido globalmente con baja latencia mediante la red perimetral de Vercel.
+
+## 🎯 Características Principales (Features)
+
+El sistema cuenta con un abanico completo de funcionalidades CRUD con estado de sesiones:
+
+- **Autenticación con JWT:** Generación de tokens seguros con expiración controlada por el backend tras validación de credenciales.
+- **Rutas Protegidas:** Navegación restringida en el CLI con React Router, forzando a usuarios anónimos al Login y verificando persistencia de JWT en LocalStorage.
+- **Foro Interactivo (CRUD):** Los usuarios autenticados pueden crear sus propias dudas y visualizar la lista de discusión de otros estudiantes actualizándose en Base de Datos de forma bidireccional E2E.
+- **Prevención de Duplicados (Backend):** Implementación de validaciones Spring `@Valid` previendo creación tópicos idénticos (`titulo` y `mensaje`).
 
 <br>
 
-<div align="center">
-    <h3>Dashboard Privado (Rutas Protegidas E2E)</h3>
-    <img src="./assets/dashboard_empty.png" width="600" alt="ForoHub Dashboard">
+<div align="center" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+    <div>
+        <h3>Dashboard Interactivo</h3>
+        <img src="./assets/dashboard_poblado.png" width="400" alt="ForoHub Dashboard Poblado">
+    </div>
+    <div>
+        <h3>Formulario CRUD Dinámico</h3>
+        <img src="./assets/nuevo_topico.png" width="400" alt="Creación de Tópico React">
+    </div>
 </div>
 
 <br>
 
-## 🛠️ Tecnologías y Dependencias Principales
+## 🛠️ Tecnologías y Dependencias
 
-**Backend (`/`):**
+**Backend API (`/`):**
 - Spring Web, Spring Data JPA, Spring Security.
 - MySQL Connector J / Flyway Migration.
 - JWT (Auth0 jsr310).
 - Lombok y Spring Boot DevTools.
 - Springdoc (Swagger UI OpenAPI).
 
-**Frontend (`/forohub-frontend/`):**
+**Frontend UI (`/forohub-frontend/`):**
 - React Vite.
 - React Router DOM (v6+).
 - Lucide React (Icons).
+- Vercel Rewrites Config JSON.
 - Vanilla CSS Variables.
 
 ---
 
-> Desafío de programación completado y documentado exhaustivamente bajo control de versiones Git en Marzo de 2026. Alura Latam ONE.
+## 📡 Documentación OpenAPI (Swagger)
+
+Toda la arquitectura de la API cuenta con auto-documentación mediante Swagger UI en producción, sirviendo interfaces graficas sobre los Controladores de Seguridad, Tópicos, Usuarios y Respuestas.
+
+A través de esta documentación viva, es factible conocer el Payload JSON exacto que Spring Boot espera y los Códigos HTTP (`200 OK`, `201 CREATED`, `403 FORBIDDEN`) resultantes:
+
+<div align="center">
+    <img src="./assets/swagger_get.png" width="800" alt="Swagger Endpoints">
+    <br><br>
+    <img src="./assets/swagger_post.png" width="800" alt="Swagger Controllers">
+</div>
+
+---
+
+<br>
+
+> *Desafío de Autenticación, Bases de Datos, Java, Dockerizacion y APIs REST. Completado y documentado bajo control de versiones Git en **Marzo de 2026**. Alura Latam / ONE.*
