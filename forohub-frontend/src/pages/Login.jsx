@@ -1,5 +1,7 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import { LogIn } from 'lucide-react';
+import { apiFetch } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { LogIn } from 'lucide-react';
 
@@ -18,22 +20,21 @@ const Login = () => {
         setIsLoading(true);
 
         try {
-            // Nota: La URL y el Fetch Real lo abstractaremos en la HU 20
-            // Ahora mismo emularemos la carga para testear UI/UX
+            const data = await apiFetch('/login', {
+                method: 'POST',
+                body: JSON.stringify({
+                    login: loginStr,
+                    clave: clave
+                })
+            });
 
-            // Simulación asincrónica
-            await new Promise(r => setTimeout(r, 1000));
-
-            if (loginStr === 'admin@aluracursos.com' || loginStr.length > 3) {
-                // Éxito Simulado
-                login('jwt-simulado-exitoso-wqeqwe123');
-                navigate('/');
-            } else {
-                throw new Error("Credenciales inválidas");
-            }
+            // Éxito: data.jwTtoken contiene la firma enviada por Spring
+            login(data.jwTtoken);
+            navigate('/');
 
         } catch (error) {
-            setErrorMsg(error.message || 'Ocurrió un error al conectar con el servidor.');
+            setErrorMsg('Credenciales inválidas o servidor inalcanzable.');
+            console.error(error);
         } finally {
             setIsLoading(false);
         }
