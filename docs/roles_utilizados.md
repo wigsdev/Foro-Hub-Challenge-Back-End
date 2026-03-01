@@ -29,7 +29,21 @@ Dado el enfoque integral del **Challenge ForoHub** (desde el diseño de base de 
   * Validar casos de borde: campos vacíos, tópicos duplicados, IDs inexistentes, tokens expirados o malformados.
   * Asegurar que por cada "Implementación" en el flujo de trabajo, se proceda a validar antes de aplicar el commit.
 
-## 5. Product Owner / Technical Lead
+## 5. Frontend Developer (React/UI Specialist)
+* **Responsabilidades:**
+  * Configurar e inicializar el proyecto en React con Vite.
+  * Diseñar la estructura de ruteo (`react-router-dom`) y protección de vistas privadas con `AuthContext`.
+  * Elaborar componentes modulares y la capa visual (UI/UX) integrando frameworks CSS (Módulos o Tailwind).
+  * Consumir la API REST, gestionar los estados de carga y adherir el token JWT en las cabeceras de cada solicitud HTTP.
+
+## 6. Cloud & DevOps Engineer
+* **Responsabilidades:**
+  * Desplegar y mantener el ecosistema de BD Relacional (MySQL/PostgreSQL) en la nube (Aiven/Neon).
+  * Configurar e inyectar variables de entorno protegidas (`.env`) en los distintos entornos.
+  * Habilitar e implementar políticas de CORS seguras en Spring Boot para habilitar la comunicación entre dominios aislados.
+  * Gestionar el despliegue de los repositorios en Render (Backend) y Vercel (Frontend), asegurando la integración continua.
+
+## 7. Product Owner / Technical Lead
 * **Responsabilidades:**
   * Velar por la estructura técnica del proyecto y la coherencia de los documentos en `docs/`.
   * Mantener el `BACKLOG.md` debidamente actualizado con el progreso real.
