@@ -546,14 +546,14 @@ Subir la API Java 17 + Spring Boot a Render. Configurar las variables de entorno
 ### Descripción
 Conectar la carpeta del frontend al servicio de alojamiento de Vercel. Despliegue continuo ante cada nuevo commit principal.
 ### Checklist
-- [ ] Importar frontend desde GitHub a Vercel.
-- [ ] Configurar variable de entorno `VITE_API_URL` apuntando a la URL pública de Render.
-- [ ] Desplegar y asegurar ruteo correcto configurando `vercel.json` para SPAs (re-escribir urls al `index.html`).
+- [x] Importar frontend desde GitHub a Vercel.
+- [x] Configurar variable de entorno `VITE_API_URL` apuntando a la URL pública de Render.
+- [x] Desplegar y asegurar ruteo correcto configurando `vercel.json` para SPAs (re-escribir urls al `index.html`).
 
 ## HU 26: Smoke Test E2E de Producción
 **Etiquetas:** `QA`, `Pruebas`
 ### Descripción
 Validar punto a punto en los URLs reales públicos que un usuario puede loguearse, crear un tópico de prueba y las credenciales validen criptográficamente al guardarse en la BD Aiven.
 ### Checklist
-- [ ] Hacer flujo Login -> Crear Tópico en Vercel.
-- [ ] Confirmar la existencia del registro en Base de Datos.
+- [x] Hacer flujo Login -> Crear Tópico en Vercel.
+- [x] Confirmar la existencia del registro en Base de Datos.
