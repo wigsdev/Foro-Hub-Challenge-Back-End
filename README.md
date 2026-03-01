@@ -78,7 +78,38 @@ El sistema cuenta con un abanico completo de funcionalidades CRUD con estado de 
 
 ---
 
-## 📡 Documentación OpenAPI (Swagger)
+## � Instalación y Setup Local
+
+Para ejecutar este proyecto en tu entorno de desarrollo local, sigue estos pasos:
+
+### 1. Clonar el Repositorio
+```bash
+git clone https://github.com/wigsdev/Foro-Hub-Challenge-Back-End.git
+cd Foro-Hub-Challenge-Back-End
+```
+
+### 2. Configurar Base de Datos (Backend)
+- Crea una base de datos MySQL local llamada `forohub`.
+- Configura las variables de entorno en tu IDE o sistema:
+  - `SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/forohub`
+  - `SPRING_DATASOURCE_USERNAME=root`
+  - `SPRING_DATASOURCE_PASSWORD=root`
+  - `API_SECURITY_SECRET=tu_secreto_super_seguro_jwt`
+- Ejecuta la aplicación Spring Boot (`./mvnw spring-boot:run`). Flyway creará las tablas automáticamente.
+
+### 3. Levantar el UI Cliente (Frontend)
+Abre otra terminal y navega hasta la carpeta del frontend:
+```bash
+cd forohub-frontend
+npm install
+npm run dev
+```
+- El servidor Vite estará disponible en `http://localhost:5173`.
+- (Opcional) Crea un archivo `.env` en la raíz del frontend definiendo `VITE_API_URL=http://localhost:8080` para forzar la interconexión en localhost.
+
+---
+
+## �📡 Documentación OpenAPI (Swagger)
 
 Toda la arquitectura de la API cuenta con auto-documentación mediante Swagger UI en producción, sirviendo interfaces graficas sobre los Controladores de Seguridad, Tópicos, Usuarios y Respuestas.
 
@@ -95,3 +126,13 @@ A través de esta documentación viva, es factible conocer el Payload JSON exact
 <br>
 
 > *Desafío de Autenticación, Bases de Datos, Java, Dockerizacion y APIs REST. Completado y documentado bajo control de versiones Git en **Marzo de 2026**. Alura Latam / ONE.*
+
+## 📜 Licencia
+
+Este proyecto está bajo la Licencia **MIT**. Puedes utilizar, clonar y modificar este código libremente para tus propios desarrollos, portafolios o fines académicos.
+
+## 👨‍💻 Autor
+
+Desarrollado con dedicación por **WIGUSA**.
+- GitHub: [@wigsdev](https://github.com/wigsdev)
+- Programa: Oracle Next Education & Alura Latam
