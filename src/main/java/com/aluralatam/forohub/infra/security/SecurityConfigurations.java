@@ -56,7 +56,8 @@ public class SecurityConfigurations {
         CorsConfiguration configuration = new CorsConfiguration();
         // Permite la aplicación en Vercel y tu local en Vite
         configuration
-                .setAllowedOrigins(java.util.List.of("http://localhost:5173", "https://foro-hub-react.vercel.app"));
+                .setAllowedOrigins(java.util.List.of("http://localhost:5173", "https://foro-hub-react.vercel.app",
+                        "https://foro-hub-challenge-back-end.vercel.app"));
         configuration.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(java.util.List.of("Authorization", "Content-Type"));
         configuration.setAllowCredentials(true);
