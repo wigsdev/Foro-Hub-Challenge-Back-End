@@ -528,8 +528,8 @@ El backend Spring Boot y el frontend React correrán en distintos dominios en la
 ### Descripción
 Migrar la persistencia de nuestra máquina local a un servidor gestionado 24/7 de MySQL/PostgreSQL usando Aiven o Neon.tech.
 ### Checklist
-- [ ] Crear instancia de Base de Datos en Aiven.
-- [ ] Obtener URI de conexión y probarla localmente (DBeaver o en el `application.properties`).
+- [x] Crear instancia de Base de Datos en Aiven.
+- [x] Obtener URI de conexión y probarla localmente (DBeaver o en el `application.properties`).
 
 ## HU 24: Despliegue de la API Backend (Render)
 **Etiquetas:** `Backend`, `Cloud`, `DevOps`
