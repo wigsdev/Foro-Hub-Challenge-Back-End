@@ -2,21 +2,30 @@
 
 :root {
   /* Paleta Base - Dark Theme Premium */
-  --bg-primary: #0f172a;    /* Slate 900 */
-  --bg-secondary: #1e293b;  /* Slate 800 */
-  --bg-tertiary: #334155;   /* Slate 700 */
-  
-  --text-primary: #f8fafc;  /* Slate 50 */
-  --text-secondary: #94a3b8;/* Slate 400 */
-  
+  --bg-primary: #0f172a;
+  /* Slate 900 */
+  --bg-secondary: #1e293b;
+  /* Slate 800 */
+  --bg-tertiary: #334155;
+  /* Slate 700 */
+
+  --text-primary: #f8fafc;
+  /* Slate 50 */
+  --text-secondary: #94a3b8;
+  /* Slate 400 */
+
   /* Acentos */
-  --accent-color: #3b82f6;      /* Blue 500 */
-  --accent-hover: #2563eb;      /* Blue 600 */
+  --accent-color: #3b82f6;
+  /* Blue 500 */
+  --accent-hover: #2563eb;
+  /* Blue 600 */
   --accent-glow: rgba(59, 130, 246, 0.4);
 
-  --danger-color: #ef4444;      /* Red 500 */
-  --success-color: #10b981;     /* Emerald 500 */
-  
+  --danger-color: #ef4444;
+  /* Red 500 */
+  --success-color: #10b981;
+  /* Emerald 500 */
+
   /* UI Elements */
   --border-radius: 12px;
   --transition-speed: 0.3s;
@@ -43,15 +52,18 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary); 
+  background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-tertiary); 
+  background: var(--bg-tertiary);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary); 
+  background: var(--text-secondary);
 }
 
 /* Utilidades Base */
@@ -108,7 +120,33 @@ body {
   outline: none;
 }
 
+
 .input-base:focus {
   border-color: var(--accent-color);
   box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+/* Responsividad para Móviles / Tablets */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+
+  .glass-panel {
+    padding: 1.5rem !important;
+    /* Sobreescribir pading duro en inline-styles react */
+  }
+
+  h1 {
+    fontSize: '1.5rem'
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .btn-primary {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
 }
