@@ -3,9 +3,11 @@ import Navbar from './components/layout/Navbar';
 import ProtectedRoute from './components/layout/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import NewTopic from './pages/NewTopic';
+import TopicDetail from './pages/TopicDetail';
 
 // Pantallas placeholder (se desarrollarán en siguientes HU)
-const Dashboard = () => <div className="app-container"><div className="glass-panel" style={{ padding: '2rem' }}><h2>Tablero de Tópicos (Área Privada)</h2></div></div>;
 const NotFound = () => <div className="app-container"><h2>404 - Ruta no encontrada</h2></div>;
 
 function App() {
@@ -21,7 +23,8 @@ function App() {
             {/* Rutas Privadas: Evaluadas por ProtectedRoute */}
             <Route element={<ProtectedRoute />}>
               <Route path="/" element={<Dashboard />} />
-              {/* Aquí meteremos futuras pantallas topico/:id etc. */}
+              <Route path="/topico/nuevo" element={<NewTopic />} />
+              <Route path="/topico/:id" element={<TopicDetail />} />
             </Route>
 
             <Route path="*" element={<NotFound />} />
